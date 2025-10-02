@@ -10,4 +10,9 @@ if (result == 1)
     int r = num * num2;
     Console.WriteLine(r);
 }
+else if(result == 2)
+{
+     int r = num + num2;
+     Console.WriteLine(r);
+}
 
