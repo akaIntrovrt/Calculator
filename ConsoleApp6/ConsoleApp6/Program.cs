@@ -2,7 +2,7 @@
 int num = int.Parse(Console.ReadLine());
 Console.Write("Enter number -> ");
 int num2 = int.Parse(Console.ReadLine());
-Console.Write("Enter 1 - to * | 2 to + | 3 - to '-' | 4 to % -> ");
+Console.Write("Enter \n| 1 - to * \n| 2 to + \n| 3 - to '-' \n| 4 to % -> ");
 int result = int.Parse(Console.ReadLine());
 
 if (result == 1)
