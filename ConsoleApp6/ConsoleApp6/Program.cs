@@ -20,3 +20,8 @@ else if (result == 3)
     int r = num - num2;
     Console.WriteLine(r);
 }
+else if (result == 4)
+{
+    int r = num % num2;
+    Console.WriteLine(r);
+}
