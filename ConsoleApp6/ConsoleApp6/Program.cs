@@ -23,7 +23,7 @@ int failed = 0;
 for (int i = 0; i < students.Length; i++)
 {
     counter++;
-    Console.Write("Все оценки: " + students[i] + " | ");
+    Console.Write(students[i] + " | ");
 }
 
 void Sum()
@@ -32,7 +32,7 @@ void Sum()
     {
         sum += item;
     }
-    Console.WriteLine("Сумма оценок -> " + sum);
+    Console.WriteLine("\nСумма оценок -> " + sum);
 }
 void Max()
 {
@@ -47,8 +47,8 @@ void Max()
             min = item;
         }
     }
-    Console.WriteLine("Максимальное число -> " + max);
-    Console.WriteLine("Минимальное число -> " + min);
+    Console.WriteLine("Максимальная оценка -> " + max);
+    Console.WriteLine("Минимальная оценка -> " + min);
 }
 void Midle()
 {
@@ -65,16 +65,16 @@ void Chetnie()
     {
         if (item % 2 == 0)
         {
-            newCounter++;
-            chetnie[newCounter] = item;
+            Console.Write(item + " | ");
         }
     }
-    Console.WriteLine("Четные оценки -> " + chetnie[newCounter]);
 }
 Sum();
 Max();
 Midle();
 Chetnie();
+
+
 //foreach(var item in students)
 //{
 //    counter++;
