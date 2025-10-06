@@ -14,11 +14,8 @@ int[] chetnie = [students.Length];
 int max = students[0];
 int min = students[0];
 int counter = 0;
-int newCounter = 0;
 int sum = 0;
 double result = 0;
-int success = 0;
-int failed = 0;
 
 for (int i = 0; i < students.Length; i++)
 {
