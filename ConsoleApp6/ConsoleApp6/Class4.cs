@@ -50,6 +50,7 @@
 //    }
 //}
 
+using System;
 namespace fProj
 
 public class Planet
@@ -57,47 +58,32 @@ public class Planet
     public Planet()
     {
         public string Name { get; set; }
-        public int Distance { get; set; }
-        public int Size { get; set; }
+        public string Distance { get; set; }
+        public string Size { get; set; }
         public string Life { get; set; }
-        public int Mass { get; set; }
-        public string BasicWeather { get; set; }
-        public string Atmosphere { get; set }
 
-    public Planet(string name, int size, int distance, string life, int mass, string weather, string atmosphere)
+    public Planet(string name, string distance, string size, string life)
     {
-        Name = name;
-        Size = size;
+        Name = "Jupiter";
         Distance = distance;
+        Size = size;
         Life = life;
-        Mass = mass;
-        BasicWeather = weather;
-        Atmosphere = atmosphere;
     }
     public Planet()
     {
-        Name = "None"
-        Size = 0;
-        Distance = 0;
-        Life = "None";
-        Mass = 0;
-        BasicWeather = "None";
-        Atmosphere = "None"
+        Size = "71492km";
+        Distance = "714m killometers"
     }
-    public void RenameTo(string name, int distance, int size, string life, int mass, string weather, string atmosphere)
+    public void RenameTo(string name, string distance, string size)
     {
         Name = name;
         Distance = distance;
         Size = size;
-        Life = life;
-        Mass = mass;
-        BasicWeather = weather;
-        Atmosphere = atmosphere;
 
     }
     public string GetInfo()
     {
-        return $"Имя: {Name}: Дистанция от солнца: {Distance}м км| Размер: {Size} | Жизнь: {Life} | Масса: {Mass} | Погода: {BasicWeather} | Атмосфера: {Atmosphere}";
+        return $"{Name}: {Distance} | {Size}";
     }
-} 
+}
 }
