@@ -1,199 +1,126 @@
-﻿
-//namespace fProj
-//{
-//    public class Point2D
-//    {
-//        public int PosX { get; private set; }
-//        public int PosY { get; private set; }
-//        public string Name { get; set; }
-
-
-
-//        public Point2D(int x, int y, string name)
-//        {
-//            PosX = x;
-//            PosY = y;
-//            Name = name;
-//        }
-
-
-//        public Point2D(int x, int y)
-//        {
-//            PosX = x;
-//            PosY = y;
-//            Name = "Dot";
-//        }
-
-//        public Point2D()
-//        {
-//            PosX = PosY = 0;
-//            Name = "Dot";
-//        }
-
-//        public void MoveTo(int x, int y)
-//        {
-//            PosX = x;
-//            PosY = y;
-//        }
-
-//        public void MoveTo(Point2D point)
-//        {
-//            PosX = point.PosX;
-//            PosY = point.PosY;
-//        }
-
-
-//        public string GetInfo()
-//        {
-//            return $"{Name}: {PosX} - {PosY}";
-//        }
-//    }
-//}
-
-namespace fProj 
+﻿namespace fProj 
 {
-    public class Continents
-    {
-        public string Asia { get; set; }
-        public double AsiaSize { get; set; }
-        public string Australia { get; set; }
-        public double AustraliaSize { get; set; }
-        public string Antarctica { get; set; }
-        public double AntarcticaSize { get; set; }
-        public string Europe { get; set; }
-        public double EuropeSize { get; set; }
-        public string NorthAmerica { get; set; }
-        public double NorthAmericaSize { get; set; }
-        public string SouthAmerica { get; set; }
-        public double SouthAmericaSize { get; set; }
 
-        public Continents()
+    public class Planet
+    {
+        public string Name { get; set; }
+        public int Distance { get; set; }
+        public int Size { get; set; }
+        public string Life { get; set; }
+        public string Mass { get; set; }
+        public string BasicWeather { get; set; }
+        public string Atmosphere { get; set; }
+        public double Density { get; set; }
+        public int Speed { get; set; }
+        public int OceansNum { get; set; }
+        public int ContinentsNum { get; set; }
+        public string PlanetName { get; set; }
+
+
+        public Planet()
         {
-            Asia = "Азия";
-            AsiaSize = 44.6;
-            Australia = "Австралия";
-            AustraliaSize = 8.6;
-            Antarctica = "Антарктика";
-            AntarcticaSize = 14.1;
-            Europe = "Европа";
-            EuropeSize = 10.2;
-            NorthAmerica = "Северная Америка";
-            NorthAmericaSize = 24.7;
-            SouthAmerica = "Южная Америка";
-            SouthAmericaSize = 17.8;
+            Name = "None";
+            Size = 0;
+            Distance = 0;
+            Life = "None";
+            Mass = "none";
+            BasicWeather = "None";
+            Atmosphere = "None";
+            Density = 0;
+            OceansNum = 0;
+            ContinentsNum = 0;
+            PlanetName = "Earth";
+            new Continents();
+            new Oceans();
+            new Climat();
         }
-    }
-    public class Climat
-    {
-        public string Equatorial { get; set; }
-        public int EquatorialTemp { get; set; }
-        public string Tropical { get; set; }
-        public int Tropicaltemp { get; set; }
-        public string Subtropical { get; set; }
-        public int SubtropicalTemp { get; set; }
-        public string Temparate { get; set; }
-        public int TemparateTemp { get; set; }
-        public string Continental { get; set; }
-        public int ContinentalTemp { get; set; }
 
-        public Climat()
+        public Planet(string name, int size, int distance, string life, string mass, string weather, string atmosphere, double density, int speed, int oceansNum, int continentsNum, string planetName )
         {
-            Equatorial = "Экваториальный климат";
-            EquatorialTemp = 25;
-            Tropical = "Тропический климат";
-            Tropicaltemp = 20;
-            Subtropical = "Субтропический климат";
-            SubtropicalTemp = 15;
-            Temparate = "Умеренный климат";
-            TemparateTemp = 10;
-            Continental = "Континентальный климат";
-            ContinentalTemp = 7;
-        }
-    }
-    public class Oceans
-    {
-        public string Pacific { get; set; }
-        public double PacificSize { get; set; }
-        public string Indian { get; set; }
-        public double IndianSize { get; set; }
-        public string Arctic { get; set; }
-        public double ArcticSize { get; set; }
-        public string Atlantic { get; set; }
-        public double AtlanticSize { get; set; }
+            Name = name;
+            Size = size;
+            Distance = distance;
+            Life = life;
+            Mass = mass;
+            BasicWeather = weather;
+            Atmosphere = atmosphere;
+            Density = density;
+            Speed = speed;
+            OceansNum = oceansNum;
+            ContinentsNum = continentsNum;
+            PlanetName = planetName;
+            new Continents();
+            new Oceans();
+            new Climat();
 
-        public Oceans()
+        }
+
+        public class Continents
         {
-            Pacific = "Тихий океан";
-            PacificSize = 168.7;
-            Indian = "Индийский океан";
-            IndianSize = 70.6;
-            Arctic = "Актический океан";
-            ArcticSize = 15.5;
-            Atlantic = "Атлантический океан";
-            AtlanticSize = 85.1;
+            public static string[] Continent { get; set; }
+            public static double[] ContinentSize { get; set; }
+            public Continents()
+            {
+                Continent = new string[] { "Asia", "Europe", "Africa", "Antarctica", "North America", "South America" };
+                ContinentSize = new double[] { 44.6, 10.2, 30.3, 14.0, 24.7, 17.8 };
+            }
         }
-public class Planet
-    {
-            public string Name { get; set; }
-            public int Distance { get; set; }
-            public int Size { get; set; }
-            public string Life { get; set; }
-            public string Mass { get; set; }
-            public string BasicWeather { get; set; }
-            public string Atmosphere { get; set; }
-            public double Density { get; set; }
-            public int Speed { get; set; }
-            public int OceansNum { get; set; }
-            public int ContinentsNum { get; set; }
-            public Continents continents { get; set; }
-            public Oceans oceans { get; set; }
-            public Climat climat { get; set; }
+        public class Climat
+        {
+            public static string[] Climats { get; set; }
+            public static int[] ClimatsTemp { get; set; }
 
-    public Planet()
+            public Climat()
             {
-                Name = "Earth";
-                Size = 0;
-                Distance = 0;
-                Life = "None";
-                Mass = "none";
-                BasicWeather = "None";
-                Atmosphere = "None";
-                Density = 0;
-                OceansNum = 0;
-                ContinentsNum = 0;
+                Climats = new string[] { "Tropical", "Desert", "Temparate", "Continental", "Polar" };
+                ClimatsTemp = new int[] { 25, 35, 15, 7, 0 };
             }
-
-    public Planet(string name, int size, int distance, string life, string mass, string weather, string atmosphere, double density, int speed, int oceansNum, int continentsNum)
-            {
-               Name = name;
-               Size = size;
-               Distance = distance;
-               Life = life;
-               Mass = mass;
-               BasicWeather = weather;
-               Atmosphere = atmosphere;
-               Density = density;
-               Speed = speed;
-               OceansNum = oceansNum;
-               ContinentsNum = continentsNum;
-            }
-            public void RenameTo(string name)
-            {
-                Name = name;
-            }
-            public void ResizeTo(int size)
-            {
-                if (size > 40000)
-                    Size = size;
-                else
-                    Console.WriteLine("\nРазмер не может быть меньше 40000\n");
-            }
-            public string GetInfo()
-            {                       
-                return $"Имя: {Name} \nДистанция от солнца: {Distance}м км  \nРазмер: {Size}  \nЖизнь: {Life}  \nМасса: {Mass}  \nОбычная Погода: {BasicWeather}  \nАтмосфера: {Atmosphere}  \nПлотность атмосферы: {Density} кг/м  \nСкорость движения вокруг солнца: {Speed}км/час  \nКоличество океанов: {OceansNum}  \nКоличество континентов: {ContinentsNum} \nКонтиненты планеты: {Name} \n{continents.Asia} | {continents.AsiaSize}м км² \n{continents.Australia} | Площадь: {continents.AustraliaSize}м км² \n{continents.Antarctica} | Площадь: {continents.AntarcticaSize}м км² \n{continents.Europe} | Площадь: {continents.EuropeSize}м км² \n{continents.NorthAmerica} | Площадь: {continents.NorthAmericaSize}м км² \n{continents.SouthAmerica} | Площадь: {continents.SouthAmericaSize}м км² \n\nОкеаны планеты: {Name} \n{oceans.Pacific} | Площадь: {oceans.PacificSize}м км² \n{oceans.Indian} | Площадь: {oceans.IndianSize}м км² \n{oceans.Arctic} | Плозадь: {oceans.ArcticSize}м км² \n{oceans.Atlantic} | Площадь: {oceans.AtlanticSize}м км²";
-            }
-        
         }
-    }
-   
-       }
+        public class Oceans
+        {
+            public static string[] Ocean { get; set; }
+            public static double[] OceanSize { get; set; }
+            public static int[] OceanTemp { get; set; }
+
+            public Oceans()
+            {
+                Ocean = new string[] { "Pacific Ocean", "Atlantic Ocean", "Arctic Ocean", "indian Ocean" };
+                OceanSize = new double[] { 168.7, 85.1, 70.6, 20.3, 14.1 };
+                OceanTemp = new int[] { 19, 16, 17, 2, 0 };
+            }   
+        }
+        public void RenameTo(string name)
+        {
+            Name = name;
+        }
+        public void ResizeTo(int size)
+        {
+            if (size > 40000)
+                Size = size;
+            else
+                Console.WriteLine("\nРазмер не может быть меньше 40000\n");
+        }
+        public void GetInfo()
+        {
+            Console.WriteLine( $"Имя: {Name} \nДистанция от солнца: {Distance}м км \nРазмер: {Size}  \nЖизнь: {Life}  \nМасса: {Mass}  \nОбычная Погода: {BasicWeather}   \nАтмосфера: {Atmosphere}   \nПлотность атмосферы: {Density} кг/м   \nСкорость движения вокруг солнца: {Speed}км/час  \nКоличество океанов: {OceansNum}  \nКоличество континентов: {ContinentsNum}");
+
+            Console.WriteLine("\n\nКонтиненты: ");
+            for (int i = 0; i < Continents.Continent.Length; i++)
+            {
+                Console.WriteLine(Continents.Continent[i] + " -> " + " | Площадь: " + Continents.ContinentSize[i] + "млн км^2");
+            }
+            Console.WriteLine("\n\nКлиматы: ");
+            for (int j = 0; j < Climat.Climats.Length; j++)
+            {
+                Console.WriteLine(Climat.Climats[j] + " -> " + " | Средняя темп: " + Climat.ClimatsTemp[j] + "C");
+            }
+            Console.WriteLine("\n\nОкеаны: ");
+            for (int s = 0; s < Oceans.Ocean.Length; s++)
+            {
+                Console.WriteLine(Oceans.Ocean[s] + " -> " + " Средняя темп: " + Oceans.OceanTemp[s] + "C" + " | Площадь: " + Oceans.OceanSize[s] + "млн км^2");
+            }
+
+        }
+
+    } 
+}
