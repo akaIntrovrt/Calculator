@@ -50,6 +50,8 @@
 //    }
 //}
 
+using System.Runtime.InteropServices;
+
 namespace fProj 
 {
 
@@ -62,6 +64,10 @@ namespace fProj
         public string Mass { get; set; }
         public string BasicWeather { get; set; }
         public string Atmosphere { get; set; }
+        public double Density { get; set; }
+        public int Speed { get; set; }
+        public int OceansNum { get; set; }
+        public int ContinentsNum { get; set; }
 
         public Planet()
         {
@@ -72,9 +78,14 @@ namespace fProj
             Mass = "none";
             BasicWeather = "None";
             Atmosphere = "None";
+            Density = 0;
+            OceansNum = 0;
+            ContinentsNum = 0;
+
+
         }
 
-        public Planet(string name, int size, int distance, string life, string mass, string weather, string atmosphere)
+        public Planet(string name, int size, int distance, string life, string mass, string weather, string atmosphere, double density, int speed, int oceansNum, int continentsNum)
         {
             Name = name;
             Size = size;
@@ -83,21 +94,28 @@ namespace fProj
             Mass = mass;
             BasicWeather = weather;
             Atmosphere = atmosphere;
+            Density = density;
+            Speed = speed;
+            OceansNum = oceansNum;
+            ContinentsNum = continentsNum;
         }
-        public void RenameTo(string name, int distance, int size, string life, string mass, string weather, string atmosphere)
+        public void RenameTo(string name)
         {
             Name = name;
-            Distance = distance;
-            Size = size;
-            Life = life;
-            Mass = mass;
-            BasicWeather = weather;
-            Atmosphere = atmosphere;
-
+        }
+        public void ResizeTo(int size)
+        {
+            if (size > 40000)
+                Size = size;
+            else
+                Console.WriteLine("\nРазмер не может быть меньше 40000\n");
         }
         public string GetInfo()
         {
-            return $"Имя: {Name}: \nДистанция от солнца: {Distance}м км  \nРазмер: {Size}  \nЖизнь: {Life}  \nМасса: {Mass}  \nОбычная Погода: {BasicWeather}  \nАтмосфера: {Atmosphere}";
+            if(OceansNum == 0 && ContinentsNum == 0 && Life == "None")
+               return $"Имя: {Name} \nДистанция от солнца: {Distance}м км  \nРазмер: {Size}  \nУ {Name} нет жизни на поверхности \nМасса: {Mass}  \nОбычная Погода: {BasicWeather}  \nАтмосфера: {Atmosphere}  \nПлотность атмосферы: {Density} кг/м  \nСкорость движения вокруг солнца: {Speed}км/час  \nУ {Name} нету океанов.  \nУ {Name} нету континентов";
+            else
+               return $"Имя: {Name} \nДистанция от солнца: {Distance}м км  \nРазмер: {Size}  \nЖизнь: {Life}  \nМасса: {Mass}  \nОбычная Погода: {BasicWeather}  \nАтмосфера: {Atmosphere}  \nПлотность атмосферы: {Density} кг/м  \nСкорость движения вокруг солнца: {Speed}км/час  \nКоличество океанов: {OceansNum}  \nКоличество континентов: {ContinentsNum}";
         }
 } 
 }
