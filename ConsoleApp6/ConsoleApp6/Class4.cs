@@ -50,40 +50,54 @@
 //    }
 //}
 
-using System;
-namespace fProj
-
-public class Planet
+namespace fProj 
 {
-    public Planet()
+
+    public class Planet
     {
         public string Name { get; set; }
-        public string Distance { get; set; }
-        public string Size { get; set; }
+        public int Distance { get; set; }
+        public int Size { get; set; }
         public string Life { get; set; }
+        public string Mass { get; set; }
+        public string BasicWeather { get; set; }
+        public string Atmosphere { get; set; }
 
-    public Planet(string name, string distance, string size, string life)
-    {
-        Name = "Jupiter";
-        Distance = distance;
-        Size = size;
-        Life = life;
-    }
-    public Planet()
-    {
-        Size = "71492km";
-        Distance = "714m killometers"
-    }
-    public void RenameTo(string name, string distance, string size)
-    {
-        Name = name;
-        Distance = distance;
-        Size = size;
+        public Planet()
+        {
+            Name = "None";
+            Size = 0;
+            Distance = 0;
+            Life = "None";
+            Mass = "none";
+            BasicWeather = "None";
+            Atmosphere = "None";
+        }
 
-    }
-    public string GetInfo()
-    {
-        return $"{Name}: {Distance} | {Size}";
-    }
-}
+        public Planet(string name, int size, int distance, string life, string mass, string weather, string atmosphere)
+        {
+            Name = name;
+            Size = size;
+            Distance = distance;
+            Life = life;
+            Mass = mass;
+            BasicWeather = weather;
+            Atmosphere = atmosphere;
+        }
+        public void RenameTo(string name, int distance, int size, string life, string mass, string weather, string atmosphere)
+        {
+            Name = name;
+            Distance = distance;
+            Size = size;
+            Life = life;
+            Mass = mass;
+            BasicWeather = weather;
+            Atmosphere = atmosphere;
+
+        }
+        public string GetInfo()
+        {
+            return $"Имя: {Name}: \nДистанция от солнца: {Distance}м км  \nРазмер: {Size}  \nЖизнь: {Life}  \nМасса: {Mass}  \nОбычная Погода: {BasicWeather}  \nАтмосфера: {Atmosphere}";
+        }
+} 
 }
